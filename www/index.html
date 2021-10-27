@@ -15,20 +15,27 @@
       });
 
       function main() {
-        $("#disp1").html("Hello, JavaScript!");
-        $("#disp1").css("font-size", "x-large");
-        $("#disp1").css("font-family", "fantasy");
-        $("#disp1").css("background-color", "lightgrey");
-        var msg = "Hello, JavaScript!";
-        msg += "<br>";
-        msg += "This is Monaca.";
-        $("#disp1").html(msg);
+        let txt1 = "";
+        let pointA = [5, 2];
+        txt1 += "x:" + pointA[0] + ",y:" + pointA[1] + "<br>";
+        for(let i=0; i<pointA.length; i++) {
+          pointA[i]+=5;
+        }
+        txt1 += "x:" + pointA[0] + ",y:" + pointA[1] + "<br>";
+        $("#disp1").html(txt1);
+        let txt2 = "";
+        let pointH = {x:5, y:2};
+        txt2 += "x:" + pointH["x"] + ",y:" + pointH["y"] + "<br>";
+        for(let key in pointH) {
+          pointH[key]+=5;
+        }
+        txt2 += "x:" + pointH["x"] + ",y:" + pointH["y"] + "<br>";
+        $("#disp2").html(txt2);
       }
     </script>
 </head>
 <body>
-  <div id="disp1" class="out">Hello, JavaScript!
-    This is Monaca.</div>
+  <div id="disp1" class="out">Hello, JavaScript!<br>This is Monaca.</div>
   <div id="disp2" class="out">DISPLAY 2</div>
   <button id="btn">Run</button>
 </body>
